@@ -1,0 +1,236 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    background-color: rgb(0, 12, 65);
+    color: #fff;
+    width: 200px;
+    min-height: 100vh;
+    padding: 20px;
+    position: fixed;
+  }
+  
+  .sidebar h1 {
+    font-size:25px;
+   color: #00ff33;
+    font-family: Legend m54;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    font-size: 25px;
+  left: 0;
+ 
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+  }
+  
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+   
+  }
+  .sidebar a:hover{
+   color: green;
+  }
+  
+  .sidebar .dropdown-menu {
+    display: none;
+    margin-left: 10px;
+    padding: 0;
+  }
+  
+  .sidebar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .sidebar .dropdown-menu li {
+    margin-bottom: 5px;
+  }
+  
+  .sidebar .dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Top bar styles */
+  .top-bar {
+    background-color: rgb(0, 12, 65);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    margin-left: 200px;
+  }
+  .top-bar h2{
+    font-size: 23px;
+    font-family: Lucida Calligraphy;
+    color: #009f20;
+  }
+  
+  .top-bar .logo a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .top-bar .navigation ul {
+    list-style-type: none;
+  }
+  
+  .top-bar .navigation li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .top-bar .navigation a {
+    color: #fff;
+    text-decoration: none;
+    margin-left:20px;
+    font-size: 20px;
+
+  }
+  
+  .top-bar .settings a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .top-bar .settings a:first-child {
+    margin-left: 0;
+  }
+  .top-bar p{
+    color: #55ff06;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  /* Content styles */
+  .content {
+    padding:20px;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+  }
+  
+ 
+  
+  .calendar {
+    background: #00ff33;
+    width: 30%;
+    min-height: 300px;
+    padding: 15px;
+    margin-left: 250px;
+  }
+  .calendar ul li{
+    margin-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+  /* Footer styles */
+  footer {
+    background-color: rgb(0, 12, 65);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    margin-left: 220px;
+    left: 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .carts {
+    display: flex;
+    margin-left: 270px;
+  }
+  
+  .cart {
+    background: #290388;
+    width: 163px;
+    height: 100px;
+    margin-right: 8px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    margin-top: 30px;
+  }
+ .carts .cart p{
+    font-size: 28px;
+    text-align: center;
+  }
+ .cart a{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 25px;
+ 
+ }
+  
+  .settings a {
+    color: #fff;
+    margin-left: 2px;
+    text-decoration: none;
+
+  }
+  
+  .settings a:first-child {
+    margin-left: 0;
+  }
+  .settings a:hover{
+    background-color: #fff;
+    color: #00ff33;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .settings .logout{
+    background-color: #00ff33;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  .sidebar ul li a:hover{
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .sidebar ul li a{
+   padding: 10px;
+  }
+  .navigation ul li a:hover{
+background-color: white;
+color: #004920;
+border-radius: 10px;
+padding: 5px;
+
+  }
+  .main-content div h2{
+    font-family: Cataneo BT;
+    margin-bottom: 10px;
+    font-size:25px;
+    background-color: #fff;
+    padding-top: 10px;
+    border-radius: 10px;
+    padding-left: 22px;
+  }
+  section p{
+    border:3px solid blue;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin-left: 240px;
+  }

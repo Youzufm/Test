@@ -1,0 +1,43 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+
+  <a href="{% url 'Addpayment' %}"><button class="btn btn-success" id="add" >Add New+</button></a>
+         
+   <div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Class_Time</th>
+            <th>Course</th>
+            <th>Date</th>
+            <th>F_Amount</th>
+            <th colspan="2">Actions</th>
+           {% for x in pay %}
+        </tr>
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.Name}}</td>
+            <td>{{x.Phone}}</td>
+            <td>{{x.Class_Time}}</td>
+            <td>{{x.Course}}</td>
+            <td>{{x.Date}}</td>
+            <td>{{x.F_Amount}}</td>
+            <td>
+                <a href="Update/{{x.id}} "><button class="btn btn-primary">Update</button></a>
+            </td>
+            <td>
+                <a href="delete/{{x.id}} "><button class="btn btn-danger">Delete</button></a>
+            </td>
+        </tr>
+        
+
+       {%endfor%}
+
+    </table>
+   
+
+   </div>
+{% endblock %}

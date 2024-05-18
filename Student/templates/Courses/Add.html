@@ -1,0 +1,31 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+
+  <div class="container">
+    <div class="form-group">
+    <form action="{% url 'addcrec'%}" method="post" >
+        {% csrf_token %}
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault01" class="form-label">Course Name::</label>
+                    <input type="text" name="Course_Name" class="form-control"><br>
+                </div>
+              </div>
+         <div class="form-row">
+            <div class="col-md-4 mb-3">
+            <label for="" class="form-label">Duaration:</label>
+            <input type="number" name="Duaration" class="form-control">
+            </div>
+         </div>
+           <div  class="form-row">
+            <div class="col-md-4 mb-3">
+            <label for="">Fee</label>
+            <input type="number" name="Fee" class="form-control">
+           </div>
+           </div>
+            <button type="submit" class="btn btn-info btn-lg active">submit</button>
+            </form>
+          </div>
+        </div>
+{% endblock %}

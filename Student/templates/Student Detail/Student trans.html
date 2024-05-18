@@ -1,0 +1,142 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href=" {% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/views.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="{%url 'Index'%}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="#" id="downloadButton"><i class="fa fa-download" aria-hidden="true" id="downloadButton"></i> Download</a></li>
+            <li><a href="{%url 'Grade'%}"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li>
+         </ul>
+        </div>
+        <div class="topbar">
+            <p>Tanaad Computer Science College</p>
+        </div>
+       
+    <div class="container">
+       
+    <table border="1" id="myTable">
+        {% csrf_token %}
+        <tr>
+            <th class="tbr1">Name:</th>
+            <td colspan="1" class="tbr1">{{exam.Name}}</td>
+            <th colspan="1" value="" class="tbr1">Department:</th>
+            <td colspan="1" class="tbr1">ICT</td>
+            <th rowspan="5" class="tbr4">Grade</th>
+         
+        </tr>
+        <tr>
+            <th class="tbr2">Shift:</th>
+            <td colspan="1" class="tbr2">{{exam.Class_time}}</td>
+            <th colspan="1" class="tbr2">Year:</th>
+            <td colspan="1" class="tbr2">2024</td>
+            
+            
+        </tr>
+        <tr class="tbr5">
+            <td>No</td>
+            <td>Course</td>
+            <td>Credit Hours</td>
+            <td>Marks</td>
+           
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A+</td>
+            <td>2 Hours</td>
+            <td>{{exam.Hardware}}</td>
+        </tr>
+       <tr>
+            <td>2</td>
+            <td>Multimedia</td>
+            <td>2 Hours</td>
+            <td>{{exam.Multimedia}}</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Webdesign</td>
+            <td>2 Hours</td>
+            <td>{{exam.Webdesign}}</td>
+            <td rowspan="5" class="tbr4">{{exam.Grade}}</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Network</td>
+            <td>2 Hours</td>
+            <td>{{exam.Network}}</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Database</td>
+            <td>2 Hours</td>
+            
+            <td>{{exam.Database}}</td>
+        </tr>
+        <tr class="tbr3">
+            <td colspan="1">#</td>
+            <td colspan="2">Total</td>
+            <td colspan="1">{{exam.Total}}</td>
+            
+            
+        </tr>
+    </table>
+    <script>
+        // Add event listener to the download button
+        const downloadButton = document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", downloadTable);
+      
+        // Function to download the table data
+        function downloadTable() {
+          // Retrieve the table element
+          const table = document.getElementById("myTable");
+      
+          // Create an empty array to store the data
+          const data = [];
+      
+          // Loop through each row in the table
+          for (let i = 0; i < table.rows.length; i++) {
+            const row = table.rows[i];
+            const rowData = [];
+      
+            // Loop through each cell in the row
+            for (let j = 0; j < row.cells.length; j++) {
+              const cell = row.cells[j];
+              rowData.push(cell.textContent);
+            }
+      
+            // Push the row data to the main data array
+            data.push(rowData);
+          }
+      
+          // Format the data as CSV
+          const csvContent = data.map(row => row.join(",")).join("\n");
+          
+          // Create a Blob object with the CSV data
+          const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      
+          // Create a temporary anchor element
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = "table_data.csv";
+      
+          // Trigger the download
+          link.click();
+        }
+      </script>
+    <footer>
+        <p>Address: Waxay kutala badhtamaha suuqa weyn ee hargiesa qaybta kowaad agagaarka masjid nakhiil qaybta labaadna waa dhinca bari ee istaanka basaska xero-awr<p></p>
+          <p>Kalasoo xidhiidh: Mobile:+25263848499 || +252654049505  Email:tanaad20@gmail.com<p>
+          <p>&copy;Eng-Yusuf Mohamed</p>
+        </footer>
+</div>
+</body>
+</html>

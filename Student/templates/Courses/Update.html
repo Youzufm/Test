@@ -1,0 +1,32 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+    
+    <div class="alert alert-success" role="alert">
+        <center> <h4 class="alert-heading" >UPDATE RECORD</h4></center> 
+           </div>
+          
+           <form action="{%url 'upcrec' crs.id %}" method="post" >
+            {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01" class="form-label">Course Name::</label>
+                        <input type="text" name="Course_Name" class="form-control" value="{{crs.Course_Name}}">
+                    </div>
+                  </div>
+             <div class="form-row">
+                <div class="col-md-4 mb-3">
+                <label for="">Duaration:</label>
+                <input type="number" name="Duaration" class="form-control" value="{{crs.Duaration}}">
+                </div>
+             </div>
+               <div  class="form-row">
+                <div class="col-md-4 mb-3">
+                <label for="">Fee</label>
+                <input type="number" name="Fee" class="form-control" value="{{crs.Fee}}">
+               </div>
+               </div>
+                <button type="submit" class="btn btn-info btn-lg active">submit</button>
+                </form>
+            
+{% endblock %}

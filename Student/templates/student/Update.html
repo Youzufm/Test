@@ -1,0 +1,47 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+
+          <div class="container">
+    <form action="{% url 'updaterec' st.id%}" method="post" id="form1">
+{% csrf_token %}
+<div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="validationDefault01" class="form-label">Fullname:</label>
+        <input type="text" name="fname" class="form-control" value="{{st.Fullname}}"><br>
+      </div>
+<div class="col-md-6 mb-3">
+<label for="">Phone:</label>
+<input type="text" name="phone" class="form-control" value="{{st.Phone}}">
+</div>
+</div>
+<div  class="form-row">
+<div class="col-md-6 mb-3">
+<label for="">Course:</label>
+<input type="text" name="course" class="form-control" value="{{st.Course}}">
+</div>
+<div class="col-md-6 mb-3">
+<label for="">Amount:</label>
+<input type="number" name="amount" class="form-control" value="{{st.Amount}}">
+</div>
+</div>
+<div  class="form-row">
+<div class="col-md-4 mb-3">
+<label for="">Time:</label>
+<input type="time" name="stime" class="form-control" value="{{st.Time}}">
+</div>
+
+<div class="col-md-4 mb-3">
+<label for="">Payment Mode:</label>
+<input type="text" name="payment" class="form-control" value="{{st.Payment_Mode}}">
+</div>
+<div class="col-md-4 mb-3">
+<label for="">Date:</label>
+<input type="date" name="date" class="form-control" value="{{st.date}}">
+</div>
+</div>
+<button type="submit" class="btn btn-info btn-lg active">submit</button>
+</form>
+
+</div>
+{% endblock %}

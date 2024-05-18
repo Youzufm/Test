@@ -1,0 +1,220 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard </title>
+  <link rel="stylesheet" href="{% static 'css/Index.css' %}">
+  <link rel="stylesheet" href=" {% static 'bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+</style>
+</head>
+<body>
+
+   <div class="top-bar">
+    <img class="Tanaad_logo" src="{% static 'images/Tanaad College LOGO.png' %}">
+  
+    <p>Hi  Welcome, {{ user.username }}!</p>
+    <div class="navigation">
+      <ul>
+        <li><a href="{%url 'Index'%}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="{%url 'About'%}"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
+        <li><a href="{%url 'Contact'%}"><i class="fa fa-phone-square" aria-hidden="true"></i> Contact</a></li>
+        <li><a href="{%url 'Grade'%}"><i class="fa fa-home" aria-hidden="true"></i> Exams</a></li>
+      </ul>
+    </div>
+    <div class="settings">
+      <a href="{% url 'logout' %}" class="Login"><i class="fa fa-lock" aria-hidden="true"></i> Login</a>
+      <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> </a>
+      <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> </a>
+    </div>
+  </div>
+  {% block userdash%}
+  <header>
+    <img src="{% static 'images/Tanaad-banner.png' %}" alt="" class="imageh">
+    <div class="typewriter">
+      <h1>Kusoo dhawoow Websiteka rasmiga ah EE:</h1>
+      <h2>Tanaad Computer Science College</h2>
+    </div>
+  </header>
+ 
+  <div class="basics">
+    <h2>Application Courses Learn Your Skill Free In this year:<span id="year"></h2>
+    </div>
+  <div class="carts">
+    <div class="cart">
+      <img src="{% static 'images/application/Windows.jpg' %}" alt="" class="appimages">
+      <a href="http://">Windows</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/word.jpg' %}" alt="" class="appimages">
+      <a href="http://">Ms Word</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/excel.png' %}" alt="" class="appimages">
+      <a href="http://">Ms Excel</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/access.jpg' %}" alt="" class="appimages">
+      <a href="http://">Ms Access</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/powerpoint.jpeg' %}" alt="" class="appimages">
+      <a href="http://">Powerpoint</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/publisher1.png' %}" alt="" class="appimages">
+      <a href="http://">Publisher</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/outlook.png' %}" alt="" class="appimages">
+      <a href="http://">Outlook</a>
+    </div>
+    <div class="cart">
+      <img src="{% static 'images/application/internet.jpg' %}" alt="" class="appimages">
+      <a href="http://">Internet</a>
+    </div>
+  </div>
+ 
+  <div class="content">
+    <div class="main-content">
+      <div class="calendar">
+       <h2>ICT Courses</h2>
+       <ul>
+        <li>Hardware</li>
+        <li>Multimedia</li>
+        <li>Webdesign</li>
+        <li>JavaScript</li>
+        <li>Network</li>
+        <li>Database</li>
+        <li>Programming</li>
+       </ul>
+      </div>
+      
+      <div class="calendar">
+        <h2>Application Courses</h2>
+        <ul>
+          <li>Windows</li>
+          <li>Ms Word</li>
+          <li>Ms Excel</li>
+          <li>Ms Powerpoint</li>
+          <li>Ms Access</li>
+          <li>Ms Publisher</li>
+          <li>Ms Outlook</li>
+          <li>Internet</li>
+        </ul>
+      </div>
+      <div class="calendar">
+        <h2>Advance Courses</h2>
+        <ul>
+          <li>Graphic Design</li>
+          <li>CCNA & CCNB</li>
+          <li>CCTV Camera</li>
+          <li>Finger Print</li>
+          <li>Excel Account</li>
+          <li>Web-development</li>
+          <li>Ethical Hacking</li>
+        </ul>
+      </div>
+    </div>
+    <div class="Head">
+  <h2>ICT Courses Learn Your Skill In this year:<span id="year"></span></i></h2>
+    </div>
+<div class="images">
+  <ul>
+    <li>
+      <div class="imgages1">
+      <img src="{% static 'images/A+.jpg' %}" alt="" class="images1">
+     <a href="#"> <h1>Hardware</h1></a>
+    </div>
+  </li>
+  <li>
+    <div class="imgages1">
+    <img src="{% static 'images/MM.jpg' %}" alt="" class="images1">
+    <a href="#"><h1>Multimedia</h1></a>
+  </div>
+</li>
+<li>
+  <div class="imgages1">
+  <img src="{% static 'images/WEB.jpg' %}" alt="" class="images1">
+  <a href="#"><h1>Webdesign</h1></a>
+</div>
+</li>
+  </ul>
+</div>
+<div class="basicapp">
+<h2>ICT Courses Learn Your Skill In this year:<span id="year"></h2>
+</div>
+<div class="images">
+  <ul>
+    <li>
+      <div class="imgages1">
+      <img src="{% static 'images/network.jpg' %}" alt="" class="images1">
+      <a href="#"><h1>Networking</h1></a>
+    </div>
+  </li>
+  <li>
+    <div class="imgages1">
+    <img src="{% static 'images/dbms.jpg' %}" alt="" class="images1">
+   <a href="#"> <h1>Database</h1></a>
+  </div>
+</li>
+<li>
+  <div class="imgages1">
+  <img src="{% static 'images/programming.jpg' %}" alt="" class="images1">
+  <a href="#"><h1>Programming</h1></a>
+</div>
+</li>
+  </ul>
+</div>
+{%endblock%}
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; <span id="year"></span> Eng-Yusuf Mohamed</p>
+      </div>
+     <ul>
+      <li>
+        <div class="faddress">
+          <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Address</h2>
+          <p>
+            Tanaad College waxay ka koobantay laba Campus 
+            qabta kowaad waxay kutala dhinaca bari ee Telesom-ta 
+            biriijka ama agagaarka cagaweyne
+            qaybta labaadna waxay kutaal dabaqa labaad ee foqa farah joome 2
+            ama dhinaca bari ee istaanka basaska xero-awr
+          </p>
+  
+        </div>
+      </li>
+      <li>
+        <div class="faddress">
+          <h2><i class="fa fa-phone-square" aria-hidden="true"></i> Contact Us</h2>
+        
+        <p>Telesom:+252 63-4484858</p>
+        <p>Somtel:+252 63-4484858</p>
+        <p>Somtel:+252 63-4484858</p>
+        
+  
+        </div>
+      </li>
+      <li>
+        <div class="faddress">
+          <h2><i class="fa fa-plus-square" aria-hidden="true"></i> Follow Us</h2>
+   
+      <p><i class="fa fa-facebook" aria-hidden="true"></i> www.facebook.com/tanaadcollege</p>
+      <p><i class="fa fa-instagram" aria-hidden="true"></i>www.instegramm/tanaadCollege</p>
+      <p><i class="fa fa-xing-square" aria-hidden="true"></i>www.twitter/tanaadCollege</p>
+        </div>
+      </li>
+     </ul>
+    </footer>
+  </div>
+
+  <script>
+    // Update current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+
+      <div class="container">
+        <div class="form-group">
+         <form  method="post" action="{%url 'upcrec' exam.id%}">
+          {% csrf_token %}
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                      <label for="validationDefault01" class="form-label">Name:</label>
+                      <input type="text" name="name" class="form-control" value="{{exam.Name}}"><br>
+                  </div>
+              <div class="col-md-6 mb-3">
+              <label for="">Phone:</label>
+              <input type="text" name="phone" class="form-control" value="{{exam.Phone}}">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-2 mb-3">
+             <label for="classtime">Class Time:</label>
+             <input type="time" class="form-control" name="classtime" required value="{{exam.Class_time}}">
+              </div>
+              <div class="col-md-2 mb-3">
+             <label for="date">Date:</label>
+             <input type="date" class="form-control" name="date" required value="{{exam.Date}}">
+              </div>
+            <div class="col-md-2 mb-3">
+             <label for="hardware">Hardware:</label>
+             <input type="number" class="form-control" id="hardware" name="hardware" required value="{{exam.Hardware}}">
+            </div>
+            <div class="col-md-2 mb-3">
+             <label for="multimedia">Multimedia:</label>
+             <input type="number" class="form-control" id="multimedia" name="multimedia" required value="{{exam.Multimedia}}"><br>
+            </div>
+            <div class="col-md-2 mb-3">
+             <label for="webdesign">Web Design:</label>
+             <input type="number" class="form-control" id="webdesign" name="webdesign" required value="{{exam.Webdesign}}"><br>
+            </div>
+        
+            <div class="col-md-2 mb-3">
+             <label for="network">Network:</label>
+             <input type="number" class="form-control" id="network" name="network" required value="{{exam.Network}}"><br>
+            </div>
+            <div>
+              <div class="form-row">
+            <div class="col-md-2 mb-3">
+             <label for="database">Database:</label>
+             <input type="number" class="form-control" id="database" name="database" required value="{{exam.Database}}"><br>
+            </div>
+            <div class="col-md-2 mb-3">
+             <label for="programming">Programming:</label>
+             <input type="number" class="form-control" id="programming" name="programming" required value="{{exam.Programming}}"><br>
+            </div>
+            <div class="col-md-2 mb-3">
+             <label for="thesis_book">Thesis Book:</label>
+             <input type="number" class="form-control" id="thesis_book" name="thesis_book" required value="{{exam.Thesis_Book}}">
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="database">Total:</label>
+             <input type="number" class="form-control" id="total" name="total" required value="{{exam.Total}}"><br>
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="programming">Average:</label>
+             <input type="number" class="form-control" id="average" name="average" required value="{{exam.Average}}"><br>
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="thesis_book">Grade:</label>
+             <input type="text" class="form-control" id="grade" name="grade" required value="{{exam.Grade}}"><br>
+          </div>
+        </div>
+        <div class="form-row" style="padding: 14px 16px;">
+              <button type="submit" class="btn btn-info btn-lg active" id="add">submit</button><br>
+              <button type="button" class="btn btn-primary" onclick="calculate()" id="add">Calculate</button>
+        </div>
+              </form>
+          
+  </div>
+</div>
+{% endblock%}

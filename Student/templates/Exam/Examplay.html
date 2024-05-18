@@ -1,0 +1,67 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+ 
+  <a href="{% url 'AddExam' %}"><button class="btn btn-success" id="add" >Add New+</button></a>
+   <div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th class="colmn">Names</th>
+            <th>Phone</th>
+            <th>Time</th>
+            <!-- <th>Date</th> -->
+            <th>A+</th>
+            <th>MM</th>
+            <th>Web</th>
+            <th>N+</th>
+            <th>DBMS</th>
+            <th>C#</th>
+            <th>Book</th>
+            <!-- <th>Total</th>
+            <th>Avg</th>
+            <th>Grade</th> -->
+            <th colspan="2">Actions</th>
+           {% for x in Ex %}
+        </tr>
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.Name}}</td>
+            <td>{{x.Phone}}</td>
+            <td>{{x.Class_time}}</td>
+            <!-- <td>{{x.Date}}</td> -->
+            <td>{{x.Hardware}}</td>
+            <td>{{x.Multimedia}}</td>
+            <td>{{x.Webdesign}}</td>
+            <td>{{x.Network}}</td>
+            <td>{{x.Database}}</td>
+            <td>{{x.Programming}}</td>
+            <td>{{x.Thesis_Book}}</td>
+            <!-- <td>{{x.Total}}</td>
+            <td>{{x.Average}}</td>
+            <td>{{x.Grade}}</td> -->
+            <td>
+                <!-- update/{{x.id}}  -->
+                <!-- deleted/{{x.id}}  -->
+                <a href="Update/{{x.id}}"><button class="btn btn-primary">Update</button></a>
+            </td>
+            <td>
+                <a href="deleted/{{x.id}}"><button class="btn btn-danger">Delete</button></a>
+            </td>
+        </tr>
+        
+
+       {%endfor%}
+
+    </table>
+    
+
+   </div>
+{% endblock %}

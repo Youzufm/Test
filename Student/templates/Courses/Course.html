@@ -1,0 +1,43 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success">
+        {{ message }}
+      </div>
+      {% endfor %}
+    {% endif %}
+    
+      <a href="{% url 'Addc'%}"><button class="btn btn-success" id="add" >Add New+</button></a>
+      <div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Course_Name</th>
+            <th>Duaration</th>
+            <th>Fee</th>
+            <th colspan="2">Actions</th>
+           {% for x in crs %}
+        </tr>
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.Course_Name}}</td>
+            <td>{{x.Duaration}}</td>
+            <td>{{x.Fee}}</td>
+            <td>
+                <a href="updatec/{{x.id}} "><button class="btn btn-primary">Update</button></a>
+            </td>
+            <td>
+                <a href="delete_c/{{x.id}} "><button class="btn btn-danger">Delete</button></a>
+            </td>
+        </tr>
+        
+
+       {%endfor%}
+
+    </table>
+
+  </div>
+  {% endblock %}

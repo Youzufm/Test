@@ -1,0 +1,143 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard </title>
+  <link rel="stylesheet" href="{% static 'css/Admindash.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <img class="Tanaad_logo" src="{% static 'images/Tanaad College LOGO.png' %}" style="width: 100px;height: 100px;">
+    <h1>Tanaad College</h1>
+    <ul>
+      <li><a href="{%url 'Home'%}"><i class="fa fa-registered" aria-hidden="true"></i> Registration</a></li>
+      <li><a href="{%url 'Course'%}">    <i class="fas fa-pencil-alt"></i> Courses</a></li>
+      <li><a href="{%url 'Payment'%}"><i class="fa fa-credit-card" aria-hidden="true"></i> Fee Payment</a></li>
+      <li><a href="{%url 'Teachers'%}"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+      <li><a href="{%url 'Grade'%}"><i class="fas fa-pencil-alt"></i> Grades</a></li>
+      <li><a href="{%url 'Users'%}">  <i class="fas fa-school"></i> Users</a></li>
+      <li class="dropdown">  
+        <a href="#"><i class="fas fa-flask"></i> Assigment</a>
+        <!-- <ul class="dropdown-menu">
+          <li><a href="#">Option 1</a></li>
+          <li><a href="#">Option 2</a></li>
+          <li><a href="#">Option 3</a></li>
+        </ul> -->
+      </li>
+    </ul>
+  </div>
+   <div class="top-bar">
+    <h2>Hi Welcome: {{ user.username }}!</h2>
+    <div class="navigation">
+      <ul>
+        <li><a href="{%url 'Index'%}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="{%url 'About'%}"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
+        <li><a href="{%url 'Contact'%}"><i class="fa fa-phone-square" aria-hidden="true"></i> Contact</a></li>
+      </ul>
+    </div>
+  
+    <div class="settings">
+      
+      <a href="{% url 'logout' %}" class="logout"><i class="fa fa-lock" aria-hidden="true"></i> Logout</a>
+      <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> </a>
+      <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> </a>
+    </div>
+  </div>
+  <div class="carts">
+   
+    <div class="cart">
+      <a href="http://"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> Students</a>
+      <p> {{st_count}}</p>
+    </div>
+    <div class="cart">
+      <a href="http://"> <i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+      <p> {{t_count}}</p>
+    </div>
+    <div class="cart">
+      <a href="http://"><i class="fa fa-credit-card" aria-hidden="true"></i> Payment</a>
+     <p>${{p_count}}</p>
+    </div>
+    <div class="cart">
+      <a href="http://"> <i class="fas fa-certificate"></i> Exam</a>
+      <p>{{e_count}}</p>
+    </div>
+    <div class="cart">
+      <a href="http://"> <i class="fas fa-pencil-ruler"></i> Courses</a>
+      <p> {{c_count}}</p>
+    </div>
+    <div class="cart">
+      <a href="http://"> <i class="fa fa-id-badge" aria-hidden="true"></i> Grade</a>
+      <p>{{g_count}}</p>
+    </div>
+    <div class="cart">
+      <a href="http://"> <i class="fa fa-users" aria-hidden="true"></i> Users</a>
+      <p>{{u_count}}</p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="main-content">
+      <div class="calendar">
+       <h2>ICT Courses</h2>
+       <ul>
+        <li>Hardware</li>
+        <li>Multimedia</li>
+        <li>Webdesign</li>
+        <li>JavaScript</li>
+        <li>Network</li>
+        <li>Database</li>
+        <li>Programming</li>
+       </ul>
+      </div>
+      
+      <div class="calendar">
+        <h2>Application Courses</h2>
+        <ul>
+          <li>Windows</li>
+          <li>Ms Word</li>
+          <li>Ms Excel</li>
+          <li>Ms Powerpoint</li>
+          <li>Ms Access</li>
+          <li>Ms Publisher</li>
+          <li>Ms Outlook</li>
+          <li>Internet</li>
+        </ul>
+      </div>
+      <div class="calendar">
+        <h2>Advance Courses</h2>
+        <ul>
+          <li>Graphic Design</li>
+          <li>CCNA & CCNB</li>
+          <li>CCTV Camera</li>
+          <li>Finger Print</li>
+          <li>Excel Account</li>
+          <li>Web-development</li>
+          <li>Ethical Hacking</li>
+        </ul>
+      </div>
+    </div>
+   <section>
+   <p>
+    Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.
+To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries.
+Themes and styles also help keep your document coordinated. When you click Design and choose a new Theme, the pictures, charts, and SmartArt graphics change to match your new theme. When you apply styles, your headings change to match the new theme.
+Save time in Word with new buttons that show up where you need them. To change the way a picture fits in your document, click it and a button for layout options appears next to it. When you work on a table, click where you want to add a row or a column, and then click the plus sign.
+Reading is easier, too, in the new Reading view. You can collapse parts of the document and focus on the text you want. If you need to stop reading before you reach the end, Word remembers where you left off - even on another device.
+
+
+   </p>
+   </section>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; <span id="year"></span> Eng-Yusuf Mohamed</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Update current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

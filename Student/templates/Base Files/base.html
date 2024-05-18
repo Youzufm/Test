@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Tanaad College</title>
+  <link rel="stylesheet" href=" {% static 'bootstrap.min.css' %}">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<script src="{% static 'Js/All.Js' %}">
+</script>
+</head>
+<body>
+  
+  <div class="sidebar">
+    <i class="fa fa-user-circle" aria-hidden="true"></i>
+  <h1>Eng-Joseph</h1>
+ 
+   
+      
+    <ul>
+       <li><a href="{%url 'admindash'%}"> Dashboard</a></li>
+       <li><a href="{%url 'Home'%}"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Students</a></li>
+       <li><a href="{%url 'Teachers'%}"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+       <li><a href="{%url 'Payment'%}"><i class="fa fa-credit-card" aria-hidden="true"></i> Payment</a></li>
+       <li><a href="{%url 'Course'%}"><i class="fas fa-pencil-ruler"></i> Courses</a></li>
+       <li><a href="{%url 'Exam'%}"> <i class="fas fa-certificate"></i> Exams</a></li>
+       <li><a href="{%url 'Users'%}"> <i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
+    </ul>
+    <!-- Sidebar content here -->
+  </div>
+  <div class="top-bar">
+   
+   <p>Tanaad Computer Sceince College</p>
+   <div class="settings">
+      
+    <a href="#"><i class="fa fa-bell" aria-hidden="true"></i>Notifications</a>
+    <a href="{% url 'logout' %}"><i class="fa fa-lock" aria-hidden="true"></i>Logout</a>
+    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
+  </div>
+  </div>
+ 
+  <div class="content">
+  
+  </div>
+  <form class="d-flex" action="">
+    <input class="search" type="search"  placeholder="Search" name="search" >
+    <button class="btnseatch" type="submit">Search</button>
+  </form>
+  
+{% block dash%}
+{% endblock %}
+
+<img class="Tanaad_logo" src="{% static 'images/Tanaad College LOGO.png' %}" alt="" id="images">
+<footer>
+  <p>Address: Waxay kutala badhtamaha suuqa weyn ee hargiesa qaybta kowaad agagaarka masjid nakhiil qaybta labaadna waa dhinca bari ee istaanka basaska xero-awr<p></p>
+    <p>Kalasoo xidhiidh: Mobile:+25263848499 || +252654049505  Email:tanaad20@gmail.com<p>
+    <p>&copy;Eng-Yusuf Mohamed</p>
+  </footer>
+
+  </body>
+  </html>

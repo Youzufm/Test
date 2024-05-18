@@ -1,0 +1,39 @@
+{% extends 'Base Files/base.html'%}
+{%load static%}
+{% block dash%}
+           <a href="{% url 'Addteacher' %}"><button class="btn btn-success" id="add" >Add New+</button></a>
+   <div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Full_Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Shift</th>
+            <th colspan="2">Actions</th>
+           {% for x in tech %}
+        </tr>
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.Fullname}}</td>
+            <td>{{x.Phone}}</td>
+            <td>{{x.Email}}</td>
+            <td>{{x.Address}}</td>
+            <td>{{x.Shift}}</td>
+            <td>
+                <a href="Update/{{x.id}} "><button class="btn btn-primary">Update</button></a>
+            </td>
+            <td>
+                <a href="delete/{{x.id}} "><button class="btn btn-danger">Delete</button></a>
+            </td>
+        </tr>
+        
+
+       {%endfor%}
+
+    </table>
+   
+
+   </div>
+{% endblock %}

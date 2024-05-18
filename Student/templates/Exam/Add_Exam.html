@@ -1,0 +1,87 @@
+{% extends 'Base Files/base.html'%}
+{%load static%}
+{% block dash%}
+
+      <div class="container">
+        <div class="form-group">
+         <form action="{% url 'Examred' %}" method="post">
+          {% csrf_token %}
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                      <label for="validationDefault01" class="form-label">Name:</label>
+                      <input type="text" name="name" class="form-control">
+                  </div>
+              <div class="col-md-6 mb-3">
+              <label for="validationDefault01" class="form-label">Phone:</label>
+              <input type="text" name="phone" class="form-control">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="">Class_Time:</label>
+                <input type="time" name="classtime" class="form-control">
+               </div>
+               <div class="col-md-6 mb-3">
+                <label for="">Date:</label>
+                <input type="date" name="date" class="form-control">
+               </div>
+         </div>
+         <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01" class="form-label">Hardware:</label>
+            <input type="text" name="hardware" id="hardware" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01" class="form-label">Multimedia:</label>
+          <input type="text" name="multimedia" id="multimedia" class="form-control">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01" class="form-label">Webdesign:</label>
+        <input type="text" name="webdesign" id="web" class="form-control">
+    </div>
+        </div>
+        <div class="form-row">
+        <div class="col-md-4 mb-3">
+             <label  for="validationDefault01" class="form-label">Network:</label>
+             <input type="number" id="network" name="network"  class="form-control">
+          </div>
+    <div class="col-md-4 mb-3">
+             <label  for="validationDefault01" class="form-label">Database:</label>
+             <input type="number" id="database" name="database"  class="form-control"><br>
+          </div>
+          <div class="col-md-4 mb-3">
+             <label for="programming" for="validationDefault01" class="form-label">Programming:</label>
+             <input type="number" id="programming" name="programming"  class="form-control">
+       </div>
+       </div>
+       <div class="form-row">
+       <div class="col-md-3 mb-3">
+             <label for="thesis_book" for="validationDefault01" class="form-label">Thesis Book:</label>
+             <input type="number" id="book" name="thesis_book"  class="form-control">
+   </div>
+   <div class="col-md-3 mb-3">
+            <label for="thesis_book" for="validationDefault01" class="form-label" >Total:</label>
+            <input type="text" name="total"  id="tot" class="form-control">
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="thesis_book" for="validationDefault01" class="form-label">Average:</label>
+          <input type="text"  name="average"  id="average" class="form-control">
+     </div>
+     <div class="col-md-3 mb-3">
+        <label for="thesis_book" for="validationDefault01" class="form-label">Grade:</label>
+        <input type="text" name="grade"  id="grade" class="form-control">
+      </div>
+      </div>
+        
+        <div class="form-row" style="padding: 14px 16px;">
+              <button type="submit" class="btn btn-info btn-lg active" id="add">submit</button><br><br>
+              <button type="button" onclick="calculate()" class="btn btn-info btn-lg active" id="add">Calculate</button>
+        </div>
+              </form>
+              
+                       
+  </div>
+</div>
+</body>
+</html>
+{% endblock %}

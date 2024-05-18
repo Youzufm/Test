@@ -1,0 +1,60 @@
+{% extends 'Dashboard/Dashbours1.html'%}
+{%load static}
+{% block userdash%}
+
+   <div class="container">
+   
+    <table class="table table-bordered" style="width:140%; margin-left:-220px;">
+        <tr>
+            
+            <th>No</th>
+            <th class="colmn">Names</th>
+            <th>Phone</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>A+</th>
+            <th>MM</th>
+            <th>Web</th>
+            <th>N+</th>
+            <th>DBMS</th>
+            <th>C#</th>
+            <th>Book</th>
+            <th>Total</th>
+            <th>Avg</th>
+            <th>Grade</th>
+            <th>Detail</th>
+           {% for y in Ex %}
+        </tr>
+        <tr>
+            <td>{{y.id}}</td>
+            <td>{{y.Name}}</td>
+            <td>{{y.Phone}}</td>
+            <td>{{y.Class_time}}</td>
+            <td>{{y.Date}}</td>
+            <td>{{y.Hardware}}</td>
+            <td>{{y.Multimedia}}</td>
+            <td>{{y.Webdesign}}</td>
+            <td>{{y.Network}}</td>
+            <td>{{y.Database}}</td>
+            <td>{{y.Programming}}</td>
+            <td>{{y.Thesis_Book}}</td>
+            <td>{{y.Total}}</td>
+            <td>{{y.Average}}</td>
+            <td>{{y.Grade}}</td>
+           
+                <!-- update/{{x.id}}  -->
+                <!-- deleted/{{x.id}}  -->
+            <td>
+              <a href="studentview/{{y.id}}"><button class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
+          
+            </td>
+        </tr>
+
+
+       {%endfor%}
+
+    </table>
+    
+
+   </div>
+{% endblock %}

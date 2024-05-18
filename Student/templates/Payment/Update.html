@@ -1,0 +1,43 @@
+{% extends 'Base Files/base.html'%}
+{%load static}
+{% block dash%}
+  
+    <div class="container">
+        <form action="{% url 'Update_red_payment' py.id%}" method="post" >
+            {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01" class="form-label">Name:</label>
+                        <input type="text" name="pname" class="form-control" value="{{py.Name}}"><br>
+                    </div>
+                <div class="col-md-4 mb-3">
+                <label for="">Phone:</label>
+                <input type="number" name="pphone" class="form-control" value="{{py.Phone}}">
+                </div>
+             </div>
+               <div  class="form-row">
+                <div class="col-md-4 mb-3">
+                <label for="">Class_Time:</label>
+                <input type="date" name="ptime" class="form-control" value="{{py.Class_Time}}">
+               </div>
+                <div class="col-md-4 mb-3">
+                <label for="">Course:</label>
+                <input type="text" name="pcourse" class="form-control" value="{{py.Course}}">
+               </div>
+               </div>
+               <div  class="form-row">
+                <div class="col-md-4 mb-3">
+                <label for="">Date:</label>
+                <input type="date" name="pdate" class="form-control" value="{{py.Date}}">
+               </div>
+                <div class="col-md-4 mb-3">
+                <label for="">F_Amount:</label>
+                <input type="number" name="pamount" class="form-control" value="{{py.F_Amount}}">
+               </div>
+               </div>
+                <button type="submit" class="btn btn-info btn-lg active">submit</button>
+                </form>
+            
+    </div>
+   
+{% endblock %}

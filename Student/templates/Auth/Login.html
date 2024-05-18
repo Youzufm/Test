@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+<style>
+    .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+}
+
+.login-form {
+  width: 300px;
+  padding: 35px;
+  background: linear-gradient(to top, #125802, #01077d);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-family: Legend m54;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 93%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 25px;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00dc07;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.login-form button:hover {
+  background-color: #172d18;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.register-link a {
+  color: #4caf50;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="" method="POST" action="{%url 'loginguser' %}">
+      <h2>Login Form</h2>
+      {% csrf_token %}
+      <input type="text" name="UN" placeholder="" required>
+      <input type="password" name="UP" placeholder="" required>
+      <input type="submit" value="Login" class="button">
+      <p class="register-link">Don't have an account? <a href="#">Register here</a></p>
+    </form>
+  </div>
+</body>
+</html>

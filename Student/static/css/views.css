@@ -1,0 +1,103 @@
+
+table{
+    font-family:Cataneo BT;
+    font-size: 20px;
+    margin-left:100px;
+    position:absolute;
+    margin-top: 140px;
+width: 75%;
+border-radius: 10px;
+}
+
+.topbar{
+    background-color: rgb(0, 12, 65);
+    color: #ffffff;
+    width: 220vh;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+    text-align: center;
+    font-size: 60px;
+    font-family: Legend m54;
+ 
+
+}
+.sidebar {
+    background-color: rgb(0, 12, 65);
+    color: #ffffff;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+  }
+ 
+.sidebar h1 {
+  font-size:30px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  color: #00ff33;
+}
+
+
+.sidebar ul {
+  list-style-type: none;
+  font-size: 25px;
+margin-top: 90px;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  
+ 
+}
+.sidebar a:hover{
+ color: green;
+}
+
+  footer{
+    background-color: rgb(0, 12, 65);
+    color: #ffffff;
+    width: 220vh;
+    height: 10vh;
+    position: fixed;
+    bottom:0;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+    text-align: center;
+    font-family:Cataneo BT;
+  }
+  .tbr1{
+    background-color: rgb(116, 68, 6);
+    color: white;
+  }
+  .tbr2{
+    background-color: rgb(5, 0, 55);
+    color: white;
+  }
+  .tbr3{
+    background-color: rgb(112, 96, 89);
+    color: rgb(0, 0, 0);
+  }
+  .tbr4{
+    background-color: rgb(5, 0, 55);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+  }
+  .tbr5{
+    background-color: rgb(5, 0, 55);
+    color: rgb(255, 255, 255);
+  }

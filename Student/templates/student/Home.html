@@ -1,0 +1,50 @@
+{% extends 'Base Files/base.html'%}
+{%load static%}
+{% block dash%}
+
+<a href="{% url 'Add' %}"><button class="btn btn-success" id="add">Add New+</button></a>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Fullname</th>
+            <th>Phone</th>
+            <th>Course</th>
+            <th>Time</th>
+            <th>Amount</th>
+            <th>P_Mode</th>
+            <th>Date</th>
+            <th colspan="2">Actions</th>
+           {% for x in st %}
+        </tr>
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.Fullname}}</td>
+            <td>{{x.Phone}}</td>
+            <td>{{x.Course}}</td>
+            <td>{{x.Time}}</td>
+            <td>{{x.Amount}}</td>
+            <td>{{x.Payment_Mode}}</td>
+            <td>{{x.date}}</td>
+            <td>
+                <a href="update/{{x.id}} "><button class="btn btn-primary">Update</button></a>
+            </td>
+            <td>
+                <a href="deleted/{{x.id}} "><button class="btn btn-danger" onclick="delte()">Delete</button></a>
+            </td>
+        </tr>
+        
+
+       {%endfor%}
+
+    </table>
+    <script>
+        function delte(){
+          alert("Are you sure to delete!");
+        }
+       </script>
+  </div>
+  {% endblock %}
+ 
+
+
