@@ -4,12 +4,17 @@
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>Tanaad College</title>
+  <link rel="icon" type="image/PNG" href="{% static 'images/Tanaad College LOGO.PNG'%}">
   <link rel="stylesheet" href=" {% static 'bootstrap.min.css' %}">
-  
+  <link rel="stylesheet" href="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 <script src="{% static 'Js/All.Js' %}">
+</script>
+<script src="{% static 'Js/Alert.js' %}">
 </script>
 </head>
 <body>
@@ -54,11 +59,25 @@
 {% endblock %}
 
 <img class="Tanaad_logo" src="{% static 'images/Tanaad College LOGO.png' %}" alt="" id="images">
+<input type="button" value="Test" onclick="deletea()">
 <footer>
   <p>Address: Waxay kutala badhtamaha suuqa weyn ee hargiesa qaybta kowaad agagaarka masjid nakhiil qaybta labaadna waa dhinca bari ee istaanka basaska xero-awr<p></p>
     <p>Kalasoo xidhiidh: Mobile:+25263848499 || +252654049505  Email:tanaad20@gmail.com<p>
     <p>&copy;Eng-Yusuf Mohamed</p>
   </footer>
-
+  <script>
+     {'for msg in message%'}
+         
+         Swal.fire({
+ position: "center",
+ icon: "success",
+ title: "Your work has been saved",
+ showConfirmButton: false,
+ timer:5,
+});
+{'endfor'}
+       
+  </script>
+  
   </body>
   </html>

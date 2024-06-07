@@ -53,5 +53,3 @@ function calculate(){
 	}
 	return false;
 }
-
-

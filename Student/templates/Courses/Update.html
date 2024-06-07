@@ -1,11 +1,7 @@
 {% extends 'Base Files/base.html'%}
 {%load static}
-{% block dash%}
-    
-    <div class="alert alert-success" role="alert">
-        <center> <h4 class="alert-heading" >UPDATE RECORD</h4></center> 
-           </div>
-          
+{% block dash%}     
+<div class="container">     
            <form action="{%url 'upcrec' crs.id %}" method="post" >
             {% csrf_token %}
                   <div class="form-row">
@@ -26,7 +22,8 @@
                 <input type="number" name="Fee" class="form-control" value="{{crs.Fee}}">
                </div>
                </div>
-                <button type="submit" class="btn btn-info btn-lg active">submit</button>
+                <button type="submit" class="btn btn-info btn-lg active" onsubmit="upadte()">submit</button>
                 </form>
+</div>
             
 {% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render,HttpResponse
 from django.contrib.auth import authenticate, login, logout
-from .models import Students,Courses,Payment,Exams,Teachers,TBusers,CustomUser
+from .models import Students,Courses,Payment,Exams,Teachers,TBusers,CustomUser 
 from django.contrib import messages
 import csv
 from django.contrib.auth.decorators import login_required
@@ -58,7 +58,7 @@ def Examred(request):
         Average=average,
         Grade=grade,
     )
-    messages.success(request, 'Data saved successfully!')
+
     exam.save()
     return redirect("Exam")
 def Update_Exam(request,id):
@@ -118,8 +118,8 @@ def addrec(request):
     
     st=Students(Fullname=fullname,Phone=phone,Course=course,Time=stime,Amount=amount,Payment_Mode=payment,date=date)
     st.save()
+    messages.success (request,'Saved Successfull')
     return redirect("Home")
-
 def deleted( request,id):
     request
     st = Students.objects.get(id=id)
@@ -161,13 +161,13 @@ def addcrec(request):
     y=request.POST['Duaration']
     z=request.POST['Fee']
     st=Courses(Course_Name=x,Duaration=y,Fee=z)
-    messages.success(request, 'Data saved successfully!')
+
     st.save()
     return redirect("Course")
 def delete_c(request,id):
     request
     crs=Courses.objects.get(id=id)
-    messages.success(request, 'Data deleted successfully!')
+
     crs.delete()
     return redirect("Course")
 def updatec(request,id):
@@ -179,7 +179,7 @@ def upcrec(request,cid):
     crs.Course_Name=request.POST.get['Course_Name']
     crs.Duaration=request.POST.get['Duaration']
     crs.Fee=request.POST.get['Fee']
-    messages.success(request, 'Data Updated successfully!')
+
     crs.save()
     return redirect("Course")
 #Kani waa payment functionka
@@ -200,13 +200,13 @@ def Add_payment_rec(request):
     E=request.POST['date']
     F=request.POST['amount']
     pay=Payment(Name=A,Phone=B,Class_Time=C,Course=D,Date=E,F_Amount=F)
-    messages.success(request, 'Data saved successfully!')
+
     pay.save()
     return redirect("Payment")
 def delete(request,id):
     request
     pay=Payment.objects.get(id=id)
-    messages.success(request, 'Data deleted successfully!')
+
     pay.delete()
     return redirect("Payment")
 def Update(request,id):
@@ -227,7 +227,7 @@ def Update_red_payment(request,id):
     pay.Course=a
     pay.Date=b
     pay.F_Amount=c
-    messages.success(request, 'Data Updated successfully!')
+
     pay.save()
     return redirect("Payment")
 #---------------------------------------Teachers-------------------------------------
@@ -248,7 +248,7 @@ def Addpaymentrec(request):
     E=request.POST['shift']
     F=request.POST['salary']
     pay=Teachers(Fullname=A,Phone=B,Email=C,Address=D,Shift=E)
-    messages.success(request, 'Data saved successfully!')
+
     pay.save()
     return redirect("Teachers")
 def Updateteacher(request,id):
@@ -268,13 +268,13 @@ def Update_red_teach(request,id):
     tech.Address=D
     tech.Shift=E
     tech.Salary=F
-    messages.success(request, 'Data Updated successfully!')
+
     tech.save()
     return redirect("Teachers")
 def deletet(request,id):
     request
     tech=Teachers.objects.get(id=id)
-    messages.success(request, 'Data deleted successfully!')
+
     tech.delete()
     return redirect("Teachers")
 def Update_Exam(request,id):
@@ -358,6 +358,7 @@ def useraddred(request):
     us.save()
     return render(request,'Auth/Au.html')
 def deluser(request,id):
+    request
     user=CustomUser.objects.get(id=id)
     user.save()
     return redirect('Users')
